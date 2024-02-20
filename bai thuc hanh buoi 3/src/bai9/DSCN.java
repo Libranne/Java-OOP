@@ -1,0 +1,65 @@
+package bai9;
+
+import java.util.Scanner;
+
+
+public class DSCN {
+	
+	int n,s;
+	Congnhan ds[];
+	// dinh nghia cac phuong thuc
+	public void nhapDSCN() 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("nhap so CN:");
+		n=sc.nextInt();
+		while(n<=0 || n>=20)
+			System.out.println("nhap lai:");
+		
+		ds= new Congnhan[n];
+		
+		for(int i=0;i<n;i++)
+		{
+			ds[i]= new Congnhan();
+			ds[i].nhap();
+			System.out.println("\n --------------");
+		}
+	}
+	public void xuatDSCN()
+	{
+		System.out.println("\n Danh sach CN:");
+		for(int i=0;i<n;i++)
+			ds[i].xuat();
+		
+	}
+	/*public void sosanh()
+	{
+		System.out.println("\n nhap so thuc s:");
+		Scanner sc = new Scanner(System.in);
+		s=sc.nextInt();
+		for(int i=0;i<n;i++)
+		if(ds[i].tinhluong() >s) 
+			xuatDSCN();
+	}*/
+	public void tinhtongluong()
+	{
+		float s=0;
+		for(int i=0;i<n;i++)
+			s=s + ds[i].tinhluong();
+		System.out.print("\n tong luong khong phu cap:"+ s);
+	}
+	public void tinhtongluongcoPC() {
+		float s1=0;
+		for(int i=0;i<n;i++)
+			s=(int) (s+ ds[i].tinhluong(pc));
+		System.out.print("\n tong luong co phu cap:"+ s);
+	}
+	public void tienchenhlech()
+	{
+		System.out.println("\n tong so tien chenh lech do chi tra phu cap:");
+		
+		System.out.println();
+		
+	}
+
+}
